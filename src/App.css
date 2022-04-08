@@ -1,0 +1,43 @@
+:root {
+  --Color-primary: #27ae60;
+  --Color-secondary: #eb5757;
+  --color-text: #333333;
+  --color-subtext: #828282;
+  --cor-text-button: #fff;
+  --backgroud-fundo: #f5f5f5;
+}
+
+.container-Global {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "header header"
+    "produtcs carrinho"
+    "products carrinho";
+}
+
+.header {
+  grid-area: header;
+  grid-column: 1 / -1;
+  background-color: var(--backgroud-fundo);
+}
+.header h1 {
+  color: var(--color-text);
+  margin-right: 5px;
+}
+.header p {
+  color: var(--Color-secondary);
+  font-weight: bold;
+}
+
+.produtcs {
+  grid-area: produtcs;
+}
+
+.carrinho {
+  grid-area: carrinho;
+}
+.container-Global .btn {
+  background-color: var(--Color-primary);
+}

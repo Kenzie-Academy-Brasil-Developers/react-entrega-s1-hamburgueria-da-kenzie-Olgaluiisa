@@ -1,0 +1,30 @@
+.cointainer-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+.logo,
+.pesquisa {
+  display: flex;
+  align-items: center;
+}
+.pesquisa {
+  max-width: 365px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  padding: 7px 10px;
+}
+input {
+  padding: 10px;
+  border: none;
+  margin-right: 40px;
+}
+textarea:focus,
+input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
