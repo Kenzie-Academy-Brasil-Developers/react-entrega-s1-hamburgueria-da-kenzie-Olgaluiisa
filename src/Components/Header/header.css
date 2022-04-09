@@ -29,6 +29,6 @@ input:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
-..pesquisa button {
-  padding: 10px;
+.pesquisa button {
+  padding: 10px 18px;
 }
