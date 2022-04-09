@@ -10,11 +10,12 @@
 .container-Global {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 400px;
   grid-template-areas:
     "header header"
     "produtcs carrinho"
     "products carrinho";
+  gap: 20px 0;
 }
 
 .header {
@@ -37,6 +38,7 @@
 
 .carrinho {
   grid-area: carrinho;
+  align-self: start;
 }
 .container-Global .btn {
   background-color: var(--Color-primary);

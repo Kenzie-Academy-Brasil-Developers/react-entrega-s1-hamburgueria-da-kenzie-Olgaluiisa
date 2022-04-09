@@ -4,32 +4,37 @@
   --color-text: #333333;
   --color-subtext: #828282;
   --cor-text-button: #fff;
+  --cor-text-link-remove: #bdbdbd;
   --background-fundo: #f5f5f5;
   --background-fundo-carrinho: #e0e0e0;
 }
 
+/*bloco titulo*/
+
+.titulo {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #27ae60;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+}
+.titulo h2 {
+  color: var(--cor-text-button);
+  font-size: 1.2em;
+  text-align: left;
+}
+
+/*bloco carrinho */
 .container-carrinho {
-  padding: 30px 20px;
+  width: 300px;
+  margin: 0 auto;
   color: #fff;
   text-align: center;
 }
 
-/*bloco titulo*/
-
-.bloco-Titulo {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 6px 6px 0px 0px;
-  background-color: var(--Color-primary);
-}
-.bloco-Titulo h2 {
-  color: var(--cor-text-button);
-}
-
-/*bloco carrinho - textos mostrados antes dos itens serem adicionados*/
+/* textos mostrados antes dos itens serem adicionados */
 .text-carrinho {
-  padding: 15px;
+  padding: 50px;
 }
 .text-carrinho h3 {
   margin: 0;
@@ -45,16 +50,14 @@
   display: flex;
 }
 .bloco-carrinho {
-  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: var(--backgroud-fundo);
 }
 .container-card {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 30px;
-  align-content: start;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0;
 }
 .imagem {
   width: 50px;
@@ -80,8 +83,44 @@
   text-align: left;
 }
 
-.container-card a {
+.container-card .remove-item {
   font-size: 12px;
   text-decoration: none;
-  color: #afafaf;
+  color: var(--cor-text-link-remove);
+}
+
+/* bloco preco total*/
+
+.preco-total {
+  margin-top: 20px;
+  border-top: 2px solid var(--background-fundo-carrinho);
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.preco-total p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.preco-total span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-subtext);
+}
+.botao {
+  padding: 5px 0 15px;
+}
+.botao button {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid var(--background-fundo-carrinho);
+  color: var(--color-subtext);
+  background-color: var(--background-fundo-carrinho);
 }

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 10px 50px;
 }
 .logo,
 .pesquisa {
@@ -10,7 +10,7 @@
   align-items: center;
 }
 .pesquisa {
-  max-width: 365px;
+  max-width: 300px;
   display: flex;
   justify-content: space-around;
   background-color: #fff;
@@ -19,12 +19,16 @@
   padding: 7px 10px;
 }
 input {
+  display: block;
+  width: 100%;
   padding: 10px;
   border: none;
-  margin-right: 40px;
 }
 textarea:focus,
 input:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
+}
+..pesquisa button {
+  padding: 10px;
 }

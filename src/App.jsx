@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Carrinho from "./Components/Main/Carrinho/Carrinho";
@@ -50,19 +50,35 @@ function App() {
       img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
     },
   ]);
-  let [currentSale, setCurrentSale] = useState([]);
+  const [currentSale, setCurrentSale] = useState([]);
 
-  let [isTrue, setIsTrue] = useState(true);
+  const [isTrue, setIsTrue] = useState(true);
+
+  const [cartTotal, setCartTotal] = useState(0);
+
+  useEffect(() => {
+    const valorTotal = currentSale.reduce((acc, product) => {
+      return acc + parseFloat(product.price);
+    }, 0);
+    setCartTotal(valorTotal);
+  }, [currentSale]);
 
   function handleClick(id) {
-    setIsTrue(false);
-    const addItem = products.find((product) => {
-      if (product.id === id) {
-        return product.id;
-      }
+    const checkProduct = currentSale.some((product) => {
+      return product.id === id;
     });
-    setCurrentSale([...currentSale, addItem]);
+
+    if (!checkProduct) {
+      setIsTrue(false);
+      const addItem = products.find((product) => {
+        if (product.id === id) {
+          return product.id;
+        }
+      });
+      setCurrentSale([...currentSale, addItem]);
+    }
   }
+
   function handleRemove(id) {
     const RemoveItem = currentSale.filter((product) => product.id !== id);
     setCurrentSale(RemoveItem);
@@ -76,6 +92,12 @@ function App() {
     setProducts(filtrados);
   }
 
+  function handleRemoveTodos() {
+    const total = currentSale.filter((product) => product.length === 0);
+    setCurrentSale(total);
+    setIsTrue(true);
+  }
+
   return (
     <div className="container-Global">
       <Header showProducts={showProducts} />
@@ -84,6 +106,8 @@ function App() {
         currentSale={currentSale}
         handleRemove={handleRemove}
         isTrue={isTrue}
+        cartTotal={cartTotal}
+        handleRemoveTodos={handleRemoveTodos}
       />
     </div>
   );
