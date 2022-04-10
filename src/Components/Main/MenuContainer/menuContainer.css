@@ -7,7 +7,7 @@
 }
 
 .container-products {
-  max-width: 980px;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 280px);
@@ -59,4 +59,32 @@
 }
 .card-product button {
   margin-left: 8px;
+}
+
+/*responsivo*/
+@media (max-width: 1200px) {
+  .container-products {
+    grid-template-columns: repeat(3, 250px);
+  }
+  .card-product {
+    width: 220px;
+  }
+}
+@media (max-width: 1140px) {
+  .container-products {
+    grid-template-columns: repeat(2, 270px);
+  }
+  .card-product {
+    width: 250px;
+  }
+}
+@media (max-width: 940px) {
+  .container-products {
+    display: flex;
+    overflow-x: auto;
+  }
+  .card-product {
+    flex: 1 0 250px;
+    margin: 0 5px;
+  }
 }

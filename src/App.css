@@ -8,19 +8,26 @@
 }
 
 .container-Global {
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 400px;
   grid-template-areas:
     "header header"
-    "produtcs carrinho"
-    "products carrinho";
+    "produtcs carrinho";
   gap: 20px 0;
+}
+/*Area responsiva*/
+@media (max-width: 940px) {
+  .container-Global {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "header"
+      "produtcs"
+      "carrinho";
+  }
 }
 
 .header {
   grid-area: header;
-  grid-column: 1 / -1;
   background-color: var(--backgroud-fundo);
 }
 .header h1 {

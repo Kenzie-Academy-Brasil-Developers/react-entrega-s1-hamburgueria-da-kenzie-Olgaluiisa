@@ -12,7 +12,7 @@
 /*bloco titulo*/
 
 .titulo {
-  width: 300px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: #27ae60;
   border-radius: 5px 5px 0 0;
@@ -26,7 +26,7 @@
 
 /*bloco carrinho */
 .container-carrinho {
-  width: 300px;
+  max-width: 100%;
   margin: 0 auto;
   color: #fff;
   text-align: center;
