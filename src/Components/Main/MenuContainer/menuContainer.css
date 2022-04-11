@@ -5,6 +5,9 @@
   --backgroud-fundo: #f5f5f5;
   --background-fundo-carrinho: #e0e0e0;
 }
+.info {
+  display: inline;
+}
 
 .container-products {
   max-width: 100%;

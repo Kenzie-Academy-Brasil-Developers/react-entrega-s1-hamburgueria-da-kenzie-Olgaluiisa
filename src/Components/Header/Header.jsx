@@ -1,10 +1,7 @@
 import "./header.css";
-import { useState } from "react";
 import Button from "../Button/Button";
 
-const Header = ({ showProducts }) => {
-  const [filteredProducts, setFilteredProducts] = useState([]);
-
+const Header = ({ showProducts, filteredProducts, setFilteredProducts }) => {
   function handleInputChange(event) {
     setFilteredProducts(event.target.value);
   }
