@@ -75,6 +75,10 @@
   font-size: 14px;
   color: var(--color-text);
   text-align: left;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .container-card span {
   display: block;
@@ -123,4 +127,5 @@
   border: 2px solid var(--background-fundo-carrinho);
   color: var(--color-subtext);
   background-color: var(--background-fundo-carrinho);
+  cursor: pointer;
 }

@@ -1,10 +1,7 @@
 import "./header.css";
 import Button from "../Button/Button";
 
-const Header = ({ showProducts, filteredProducts, setFilteredProducts }) => {
-  function handleInputChange(event) {
-    setFilteredProducts(event.target.value);
-  }
+const Header = ({ showProducts, inputValue, setInputValue }) => {
   return (
     <header className="cointainer-Header header">
       <div className="logo">
@@ -15,12 +12,10 @@ const Header = ({ showProducts, filteredProducts, setFilteredProducts }) => {
         <input
           type="text"
           placeholder="Digitar pesquisa"
-          onChange={handleInputChange}
-          value={filteredProducts}
+          onChange={(event) => setInputValue(event.target.value)}
+          value={inputValue}
         />
-        <Button onClick={() => showProducts(filteredProducts)}>
-          Pesquisar
-        </Button>
+        <Button onClick={() => showProducts(inputValue)}>Pesquisar</Button>
       </div>
     </header>
   );

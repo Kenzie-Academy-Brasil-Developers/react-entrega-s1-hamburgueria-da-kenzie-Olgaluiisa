@@ -53,6 +53,7 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [isTrue, setIsTrue] = useState(true);
   const [cartTotal, setCartTotal] = useState(0);
+  const [inputValue, setInputValue] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
@@ -87,16 +88,17 @@ function App() {
   }
 
   function showProducts(inputValue) {
-    setIsTrue(false);
     const filtrados = products.filter((product) => {
       return (
+        product.name === inputValue ||
+        product.category === inputValue ||
         product.name.toLocaleLowerCase() === inputValue ||
         product.name.toLocaleUpperCase() === inputValue ||
         product.category.toLocaleLowerCase() === inputValue ||
         product.category.toLocaleUpperCase() === inputValue
       );
     });
-    setProducts(filtrados);
+    setFilteredProducts(filtrados);
   }
 
   function handleRemoveTodos() {
@@ -109,13 +111,14 @@ function App() {
     <div className="container-Global">
       <Header
         showProducts={showProducts}
-        filteredProducts={filteredProducts}
-        setFilteredProducts={setFilteredProducts}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
       />
       <MenuContainer
         products={products}
         handleClick={handleClick}
-        isTrue={isTrue}
+        filteredProducts={filteredProducts}
+        inputValue={inputValue}
       />
       <Carrinho
         currentSale={currentSale}
