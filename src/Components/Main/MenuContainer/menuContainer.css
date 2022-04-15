@@ -23,6 +23,7 @@
   padding: 10px;
   grid-column: 1 / -1;
 }
+
 .sub-text {
   color: var(--color-subtext);
 }
@@ -87,9 +88,14 @@
   .container-products {
     display: flex;
     overflow-x: auto;
+    position: relative;
   }
   .card-product {
     flex: 1 0 250px;
-    margin: 0 5px;
+    margin: 65px 5px;
+  }
+  .text-products {
+    position: absolute;
+    top: -10px;
   }
 }

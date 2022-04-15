@@ -8,12 +8,11 @@ const MenuContainer = ({
   filteredProducts,
   inputValue,
 }) => {
-  console.log(filteredProducts);
   return (
     <section className="container-products products">
       {filteredProducts.length > 0 ? (
         <>
-          <h1 className="text-products">
+          <h1 className="text-products ">
             Resultados para: <span className="sub-text">{inputValue} </span>
           </h1>
           {filteredProducts.map(({ id, img, name, category, price }) => (
